@@ -6,7 +6,9 @@ export const defaultTemplate: CardTemplate = {
   type: 'crypto',
   width: 400,
   height: 250,
-  backgroundColor: '#0F172A',
+  backgroundColor: '#0A0118',
+  contractAddress: '0x7Dc3C0A1Bb9c35434D52BF0dB8d96c24E6Bc0B89',
+  backgroundImage: 'https://images.pexels.com/photos/7788009/pexels-photo-7788009.jpeg',
   imagePosition: {
     top: 20,
     left: 20,
@@ -15,10 +17,10 @@ export const defaultTemplate: CardTemplate = {
     borderRadius: 40
   },
   text: {
-    title: 'SBT CARD',
-    subtitle: '1234 5678 9012 3456',
-    name: 'CARDHOLDER',
-    contact: '12/25',
+    title: 'SBT TOKEN',
+    subtitle: 'SOLANA BENEFIT TRANSFER',
+    name: 'HOLDER NAME',
+    contact: 'PERMANENT',
     message: ''
   },
   textStyles: {
@@ -26,7 +28,7 @@ export const defaultTemplate: CardTemplate = {
       label: 'Card Title',
       placeholder: 'SBT CARD',
       description: 'Card title (non-editable)',
-      color: '#94A3B8',
+      color: '#00F5FF',
       fontSize: 24,
       fontWeight: 700,
       lineHeight: '1.2',
@@ -37,10 +39,10 @@ export const defaultTemplate: CardTemplate = {
       multiline: false
     },
     subtitle: {
-      label: 'Card Number',
-      placeholder: '1234 5678 9012 3456',
-      description: 'Card number (non-editable)',
-      color: '#E2E8F0',
+      label: 'Card Subtitle',
+      placeholder: 'SOLANA BENEFIT TRANSFER',
+      description: 'Card subtitle (non-editable)',
+      color: '#FF00E5',
       fontSize: 20,
       fontWeight: 500,
       lineHeight: '1.4',
@@ -51,10 +53,10 @@ export const defaultTemplate: CardTemplate = {
       multiline: false
     },
     name: {
-      label: 'Cardholder Name',
-      placeholder: 'CARDHOLDER',
-      description: 'Enter your name',
-      color: '#CBD5E1',
+      label: 'Holder Name',
+      placeholder: 'HOLDER NAME',
+      description: 'Enter your name or wallet address',
+      color: '#B4B7FF',
       fontSize: 18,
       fontWeight: 600,
       lineHeight: '1.4',
@@ -65,10 +67,10 @@ export const defaultTemplate: CardTemplate = {
       multiline: false
     },
     contact: {
-      label: 'Expiry',
-      placeholder: '12/25',
-      description: 'Expiry date (non-editable)',
-      color: '#94A3B8',
+      label: 'Status',
+      placeholder: 'PERMANENT',
+      description: 'Token status (non-editable)',
+      color: '#00F5FF',
       fontSize: 16,
       fontWeight: 400,
       lineHeight: '1.4',
@@ -82,7 +84,7 @@ export const defaultTemplate: CardTemplate = {
       label: 'Hidden Message',
       placeholder: '',
       description: '',
-      color: '#475569',
+      color: '#B4B7FF',
       fontSize: 12,
       fontWeight: 400,
       lineHeight: '1.4',

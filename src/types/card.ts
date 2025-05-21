@@ -29,6 +29,8 @@ export interface CardTemplate {
   width: number;
   height: number;
   backgroundColor: string;
+  contractAddress: string;
+  backgroundImage: string | null;
   imagePosition: ImagePosition;
   text: {
     title: string;

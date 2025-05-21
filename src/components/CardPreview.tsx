@@ -8,7 +8,7 @@ interface CardPreviewProps {
 
 const CardPreview = forwardRef<HTMLDivElement, CardPreviewProps>(
   ({ template, image }, ref) => {
-    const { width, height, text, backgroundColor } = template;
+    const { width, height, text, backgroundColor, backgroundImage } = template;
     
     return (
       <div 
@@ -16,18 +16,20 @@ const CardPreview = forwardRef<HTMLDivElement, CardPreviewProps>(
         className="relative overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-[1.01] w-full"
         style={{
           aspectRatio: `${width} / ${height}`,
-          background: `linear-gradient(135deg, ${backgroundColor} 0%, #1E293B 100%)`,
+          background: backgroundImage 
+            ? `linear-gradient(135deg, rgba(10, 1, 24, 0.3), rgba(10, 1, 24, 0.2)), url(${backgroundImage}) center/cover no-repeat`
+            : `linear-gradient(135deg, ${backgroundColor} 0%, #1E293B 100%)`,
           borderRadius: '16px',
           border: '1px solid rgba(255, 255, 255, 0.1)'
         }}
       >
         {/* Card background effects */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 opacity-30 mix-blend-overlay"
+          <div className="absolute inset-0 opacity-20 mix-blend-overlay"
                style={{
-                 backgroundImage: "radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.4) 0%, transparent 50%)"
+                 backgroundImage: "radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.4) 0%, transparent 50%)"
                }} />
-          <div className="absolute inset-0 opacity-20"
+          <div className="absolute inset-0 opacity-10"
                style={{
                  backgroundImage: "url('https://images.pexels.com/photos/7130498/pexels-photo-7130498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
                  backgroundSize: 'cover',
@@ -72,23 +74,23 @@ const CardPreview = forwardRef<HTMLDivElement, CardPreviewProps>(
         <div className="absolute inset-0 p-[5%]">
           <div className="relative h-full flex flex-col justify-between">
             <div className="text-right">
-              <p className="text-[6vw] md:text-[24px] font-bold text-gray-300 tracking-wider">
+              <p className="text-[4.5vw] sm:text-[24px] font-bold text-gray-300 tracking-wider">
                 {text.title}
               </p>
             </div>
             
             <div className="space-y-2">
-              <p className="text-[5vw] md:text-[20px] font-medium text-gray-200 tracking-widest">
+              <p className="text-[3.5vw] sm:text-[20px] font-medium text-gray-200 tracking-widest">
                 {text.subtitle}
               </p>
-              <p className="text-[4.5vw] md:text-[18px] font-semibold text-gray-300 tracking-wider">
+              <p className="text-[3.2vw] sm:text-[18px] font-semibold text-gray-300 tracking-wider">
                 {text.name}
               </p>
               <div className="flex justify-between items-center">
-                <p className="text-[3.5vw] md:text-[14px] text-gray-400">
+                <p className="text-[2.5vw] sm:text-[14px] text-gray-400">
                   VALID THRU
                 </p>
-                <p className="text-[4vw] md:text-[16px] text-gray-300 tracking-wider">
+                <p className="text-[3vw] sm:text-[16px] text-gray-300 tracking-wider">
                   {text.contact}
                 </p>
               </div>

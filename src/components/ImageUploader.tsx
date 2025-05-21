@@ -69,7 +69,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
   return (
     <div className="w-full">
       {previewUrl ? (
-        <div className="relative border border-gray-700 rounded-lg overflow-hidden bg-gray-900">
+        <div className="relative border border-purple-500/10 rounded-xl overflow-hidden bg-black/30">
           <img 
             src={previewUrl} 
             alt="Preview" 
@@ -77,12 +77,12 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
           />
           <button
             onClick={clearImage}
-            className="absolute top-2 right-2 bg-gray-800 p-1.5 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+            className="absolute top-2 right-2 bg-black/50 p-2 rounded-full shadow-lg hover:bg-black/70 transition-colors"
             aria-label="Remove image"
           >
-            <X size={18} className="text-gray-200" />
+            <X className="w-5 h-5 text-[#FF00E5]" />
           </button>
-          <p className="text-center py-2 text-sm text-gray-400">Click the X to remove or choose another logo</p>
+          <p className="text-center py-3 text-sm text-[#B4B7FF]">Click the X to remove or choose another logo</p>
         </div>
       ) : (
         <div
@@ -90,18 +90,18 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
-          className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+          className={`border-2 border-dashed rounded-xl p-8 text-center transition-all duration-300 ${
             dragActive 
-              ? "border-purple-500 bg-purple-500/10" 
-              : "border-gray-700 hover:border-purple-400 hover:bg-gray-800/50"
+              ? "border-[#00F5FF] bg-[#00F5FF]/10" 
+              : "border-purple-500/30 hover:border-[#00F5FF] hover:bg-[#00F5FF]/5"
           }`}
         >
-          <Upload className="mx-auto mb-4 text-gray-400" />
-          <p className="mb-2 text-gray-300">Drag and drop your logo here</p>
-          <p className="mb-4 text-sm text-gray-500">or</p>
+          <Upload className="mx-auto mb-4 text-[#00F5FF] w-12 h-12 sm:w-10 sm:h-10" />
+          <p className="mb-2 text-white text-lg sm:text-base">Drag and drop your logo here</p>
+          <p className="mb-4 text-sm text-[#B4B7FF]">or</p>
           <button
             onClick={handleButtonClick}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg py-2 px-4 font-medium transition-colors shadow-lg"
+            className="bg-gradient-to-r from-[#00F5FF] to-[#FF00E5] text-black font-bold rounded-xl py-4 sm:py-3 px-6 text-lg sm:text-base transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,245,255,0.3)] hover:shadow-[0_0_30px_rgba(0,245,255,0.4)]"
           >
             Choose File
           </button>
